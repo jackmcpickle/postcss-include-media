@@ -9,10 +9,36 @@ async function run (input, output, opts = { }) {
   expect(result.warnings()).toHaveLength(0)
 }
 
-/* Write tests here
+const breakpoints = {
+  sm: '350px',
+  md: '600px',
+  lg: '1200px',
+};
+
+const source = `
+  @include-media(">md") {
+    .a {
+      display: flex;
+    }
+
+    .b {
+      display: none;
+    }
+  }
+`;
+
+const output = `
+  @media(min-width: 600px) {
+    .a {
+      display: flex;
+    }
+
+    .b {
+      display: none;
+    }
+  }
+`
 
 it('does something', async () => {
-  await run('a{ }', 'a{ }', { })
-})
-
-*/
+  await run(source, output, { breakpoints })
+});

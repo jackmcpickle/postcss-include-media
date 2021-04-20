@@ -1,15 +1,30 @@
-/* eslint-disable no-unused-vars */
+const { validBreakpoints } = require('./src/validBreakpoints');
+const { captureAction, actionMap } = require('./src/captureAction');
+const { captureSize } = require('./src/captureSize');
+
 module.exports = (opts = { }) => {
 
-  // Work with options here
+  const breakpoints = (opts.breakpoints);
+  if (!validBreakpoints(breakpoints)) {
+    throw new Error('Breakpoints are not the valid structure, must be { key: String }')
+  }
 
   return {
     postcssPlugin: 'postcss-include-media',
-    /*
-    Root (root, postcss) {
-      // Transform CSS AST here
-    }
-    */
+
+    Root (root) {
+      root.walkRules(function (rule) {
+        if (rule.parent?.type === 'atrule' && rule.parent?.name === 'include-media') {
+          const signAction = captureAction(rule.parent.params)
+          const signSize = captureSize(rule.parent.params)
+          const capturedBreakpoint = breakpoints[signSize];
+          const size = actionMap(signAction);
+          const newParams = `(${size} ${capturedBreakpoint})`;
+          rule.parent.params = newParams;
+          rule.parent.name = 'media';
+        }
+      })
+    },
 
     /*
     Declaration (decl, postcss) {
