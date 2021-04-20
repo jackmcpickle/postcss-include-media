@@ -2,6 +2,8 @@ const { validBreakpoints } = require('./src/validBreakpoints');
 const { captureAction, actionMap } = require('./src/captureAction');
 const { captureSize } = require('./src/captureSize');
 
+const AT_RULE_NAME = 'include-media';
+
 module.exports = (opts = { }) => {
 
   const breakpoints = (opts.breakpoints);
@@ -13,32 +15,20 @@ module.exports = (opts = { }) => {
     postcssPlugin: 'postcss-include-media',
 
     Root (root) {
-      root.walkRules(function (rule) {
-        if (rule.parent?.type === 'atrule' && rule.parent?.name === 'include-media') {
-          const signAction = captureAction(rule.parent.params)
-          const signSize = captureSize(rule.parent.params)
+      root.walkAtRules(function (atRule) {
+        if (atRule.name === AT_RULE_NAME) {
+          const signAction = captureAction(atRule.params)
+          const signSize = captureSize(atRule.params)
           const capturedBreakpoint = breakpoints[signSize];
           const size = actionMap(signAction);
           const newParams = `(${size} ${capturedBreakpoint})`;
-          rule.parent.params = newParams;
-          rule.parent.name = 'media';
+          const newAtRule = atRule.clone();
+          newAtRule.params = newParams;
+          newAtRule.name = 'media';
+          atRule.replaceWith(newAtRule);
         }
       })
     },
-
-    /*
-    Declaration (decl, postcss) {
-      // The faster way to find Declaration node
-    }
-    */
-
-    /*
-    Declaration: {
-      color: (decl, postcss) {
-        // The fastest way find Declaration node if you know property name
-      }
-    }
-    */
   }
 }
 module.exports.postcss = true
