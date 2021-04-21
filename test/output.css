@@ -1,0 +1,38 @@
+/* https://css-tricks.com/css-media-queries */
+#sidebar ul li a {
+    color: #900;
+    text-decoration: none;
+    padding: 3px 0;
+    display: block;
+}
+
+@media print {
+    #sidebar ul li a:after {
+        content: " (" attr(data-email) ")";
+        font-size: 12px;
+        font-style: italic;
+        color: #000;
+    }
+}
+
+
+@media all and (max-width: 1000px) and (min-width: 701px) {
+    #sidebar ul li a:before {
+        content: "Email: ";
+        font-style: italic;
+        color: #666;
+    }
+}
+
+@media all and (max-width: 699px) and (min-width: 921px) {
+    #sidebar ul li a {
+        padding-left: 21px;
+        background: url(../images/email.png) left center no-repeat;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 699px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx), (min-width: 1201px)  {
+    #sidebar ul li a {
+        background: url(../images/emailx2.png) left center no-repeat;
+    }
+}
