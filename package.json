@@ -1,8 +1,9 @@
 {
   "name": "postcss-include-media",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "PostCSS plugin to output @media definitions from include-media format.",
   "type": "module",
+  "main": "index.js",
   "keywords": [
     "postcss",
     "css",
@@ -12,7 +13,8 @@
     "media queries"
   ],
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage && eslint ."
+    "lint": "eslint . --fix",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage && npm run lint"
   },
   "author": "Jack McNicol <jackmcpickle@gmail.com>",
   "license": "MIT",
