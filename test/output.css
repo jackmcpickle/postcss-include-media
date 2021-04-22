@@ -16,7 +16,7 @@
 }
 
 
-@media all and (max-width: 1000px) and (min-width: 701px) {
+@media all and (max-width: 1000px) and (min-width: 705px) {
     #sidebar ul li a:before {
         content: "Email: ";
         font-style: italic;
@@ -24,14 +24,14 @@
     }
 }
 
-@media all and (max-width: 699px) and (min-width: 921px) {
+@media all and (max-width: 695px) and (min-width: 925px) {
     #sidebar ul li a {
         padding-left: 21px;
         background: url(../images/email.png) left center no-repeat;
     }
 }
 
-@media (min-width: 350px) and (max-width: 699px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx), (min-width: 1201px)  {
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) and (min-width: 350px) and (max-width: 695px) and (min-width: 1205px) {
     #sidebar ul li a {
         background: url(../images/emailx2.png) left center no-repeat;
     }

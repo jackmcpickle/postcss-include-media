@@ -20,8 +20,18 @@ const breakpoints = {
     em: '456em',
 };
 
+const unitIntervals = {
+    px: 5,
+};
+
+const mediaExpressions = {
+    all: 'all',
+    print: 'print',
+    retina3x: '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx)',
+};
+
 describe('@include-media', () => {
     it('Should handle basic case', async () => {
-        await run(input, output, { breakpoints });
+        await run(input, output, { breakpoints, unitIntervals, mediaExpressions });
     });
 });
