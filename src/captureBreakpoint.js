@@ -3,6 +3,7 @@
  *
  * @param {string} atRuleParams the raw atRule.params
  * @param {string} operator the operator used to compare the trailing value
+ * @param {object} breakpoints - object of breakpoints definitions
  *
  * @returns {string}
  */

@@ -13,7 +13,7 @@ export const OPERATORS = ['>=', '>', '<=', '<', '≥', '≤'];
  *     'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)'
  *   };
  */
-export const mediaExpressions = {
+export const defaultMediaExpressions = {
     screen: 'screen',
     print: 'print',
     all: 'all',
@@ -33,9 +33,18 @@ export const mediaExpressions = {
  * Generates:
  * @media (min-width: 129px) {}
  */
-export const unitIntervals = {
+export const defaultUnitIntervals = {
     px: 1,
     em: 0.01,
     rem: 0.1,
     '': 0,
+};
+
+/**
+ * Default breakpoints used in the original Sass include-media
+ */
+export const defaultBreakpoints = {
+    phone: '320px',
+    tablet: '768px',
+    desktop: '1024px',
 };
