@@ -1,6 +1,6 @@
-import postcss from 'postcss';
-import fs from 'fs';
-import plugin from '..';
+const postcss = require('postcss');
+const fs = require('fs');
+const plugin = require('..');
 
 const input = fs.readFileSync('./test/input.css', 'utf8');
 const output = fs.readFileSync('./test/output.css', 'utf8');
