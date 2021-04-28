@@ -6,7 +6,8 @@
   "module": "index.es.mjs",
   "files": [
     "index.cjs.js",
-    "index.es.mjs"
+    "index.es.mjs",
+    "index.d.ts"
   ],
   "types": "./index.d.ts",
   "keywords": [
