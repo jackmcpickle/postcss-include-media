@@ -8,7 +8,7 @@ import { defaultBreakpoints, defaultMediaExpressions, defaultUnitIntervals } fro
 import { captureMediaExpression } from './src/captionMediaExpression';
 const AT_RULE_NAME = 'include-media';
 
-export default (opts = {}) => {
+const includeMediaPlugin = (opts = {}) => {
     const breakpoints = opts.breakpoints || defaultBreakpoints;
     const mediaExpressions = opts.mediaExpressions || defaultMediaExpressions;
     const unitIntervals = opts.unitIntervals || defaultUnitIntervals;
@@ -60,3 +60,7 @@ export default (opts = {}) => {
         },
     };
 };
+
+includeMediaPlugin.postcss = true;
+
+export default includeMediaPlugin;

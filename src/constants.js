@@ -25,8 +25,7 @@ export const defaultMediaExpressions = {
 };
 
 /**
- * Defines a number to be added or subtracted from each unit when declaring
- * breakpoints with exclusive intervals
+ * Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
  * @example - Interval for pixels is defined as `1` by default
  * @include-media('>128px') {}
  *
