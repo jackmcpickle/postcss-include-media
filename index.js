@@ -36,10 +36,15 @@ export default (opts = {}) => {
                         }
                         const operator = captureOperator(params);
                         const minMax = getMinMax(operator);
+                        if (minMax === '') {
+                            result.warn(`You have not defined an operator "${operator}" for @include-media`);
+                            return `${params}`;
+                        }
                         const dimension = getRuleDimension(params, operator);
                         const breakpoint = captureBreakpoint(params, operator, breakpoints);
                         if (isNaN(parseFloat(breakpoint))) {
                             result.warn(`Not a valid breakpoint of "${breakpoint}" given to @include-media`);
+                            return `(${minMax}-${dimension}: ${breakpoint})`;
                         }
                         const unitMeasure = getUnitFromBreakpoint(breakpoint);
                         const value = getRuleValue(breakpoint, operator, unitIntervals);
