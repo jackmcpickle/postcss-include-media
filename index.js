@@ -46,8 +46,9 @@ export default (opts = {}) => {
                         return `(${minMax}-${dimension}: ${value}${unitMeasure})`;
                     });
                     const newAtRule = atRule.clone();
-                    newAtRule.params = newParams.join(' and ');
+                    newAtRule.params = newParams.join(' and '); // TODO make configurable
                     newAtRule.name = 'media';
+                    newAtRule.raws.afterName = ' '; // adds space between rule and query.
                     atRule.replaceWith(newAtRule);
                 }
             });
