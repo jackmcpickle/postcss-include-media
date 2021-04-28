@@ -1,5 +1,7 @@
 # PostCSS Include Media
 
+[![NPM version](https://img.shields.io/npm/v/postcss-include-media.svg)](https://www.npmjs.org/package/postcss-include-media) ![Tests](https://github.com/jackmcpickle/postcss-include-media/actions/workflows/test.yml/badge.svg)
+
 [PostCSS] plugin to output css `@media` definitions based on SASS mixin [include-media] format
 
 ### Features
