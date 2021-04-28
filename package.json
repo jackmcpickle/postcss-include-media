@@ -48,7 +48,7 @@
     "postcss": "8.2.13",
     "prettier": "2.2.1",
     "rollup": "2.45.2",
-    "simple-git-hooks": "2.3.1"
+    "simple-git-hooks": "2.4.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
