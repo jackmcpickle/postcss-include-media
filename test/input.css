@@ -16,7 +16,7 @@
 }
 
 
-@include-media ('all', '<=lg', '>md') {
+@include-media('all', '<=lg', '>md') {
     #sidebar ul li a:before {
         content: "Email: ";
         font-style: italic;
@@ -24,7 +24,7 @@
     }
 }
 
-@include-media ('all', '<md', >920px) {
+@include-media('all', '<md', >920px) {
     #sidebar ul li a {
         padding-left: 21px;
         background: url(../images/email.png) left center no-repeat;
