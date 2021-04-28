@@ -8,6 +8,7 @@
     "index.cjs.js",
     "index.es.mjs"
   ],
+  "types": "./index.d.ts",
   "keywords": [
     "postcss",
     "css",
