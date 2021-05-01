@@ -1,12 +1,12 @@
 /**
  *  Get dimension of an atRule params, based on a found operator
  *
- *  @param {String} atRuleParams - Expression to extract dimension from
- *  @param {String} operator - Operator from `params`
+ *  @param {string} atRuleParams - Expression to extract dimension from
+ *  @param {string} operator - Operator from `params`
  *
- *  @return {String} - `width` or `height` (or potentially anything else)
+ *  @return {string} - `width` or `height` (or potentially anything else)
  */
-export const getRuleDimension = (params, operator) => {
+export const getRuleDimension = (params: string, operator: string): string => {
     const operatorIndex = params.indexOf(operator);
     const parsedDimension = params.slice(1, operatorIndex - 1);
     const dimension = 'width';

@@ -1,3 +1,4 @@
+import { OperatorsType, BreakpointType } from '../index.d';
 /**
  * Used to return the matching breakpoint value. OR returns the value after the operator
  *
@@ -8,7 +9,7 @@
  * @returns {string}
  */
 
-export const captureBreakpoint = (atRuleParams, operator, breakpoints) => {
+export const captureBreakpoint = (atRuleParams: string, operator: OperatorsType, breakpoints: BreakpointType): string => {
     const operatorIndex = atRuleParams.indexOf(operator);
     const rawValue = atRuleParams.slice(operatorIndex + operator.length).replace(/['"()]/g, '');
     if (breakpoints[rawValue]) {

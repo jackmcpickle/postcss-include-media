@@ -1,3 +1,4 @@
+import { IncludeMediaOptions } from './';
 import { validBreakpoints, validMediaExpressions, validUnitIntervals } from './src/validators';
 import { getRuleDimension } from './src/getRuleDimension';
 import { getUnitFromBreakpoint } from './src/getUnitFromBreakpoint';
@@ -6,9 +7,11 @@ import { getRuleValue } from './src/getRuleValue';
 import { captureOperator, getMinMax } from './src/captureMinMax';
 import { defaultBreakpoints, defaultMediaExpressions, defaultUnitIntervals } from './src/constants';
 import { captureMediaExpression } from './src/captionMediaExpression';
+import { Root, Result, AtRule } from 'postcss';
+
 const AT_RULE_NAME = 'include-media';
 
-const includeMediaPlugin = (opts = {}) => {
+const includeMediaPlugin = (opts: IncludeMediaOptions = {}) => {
     const breakpoints = opts.breakpoints || defaultBreakpoints;
     const mediaExpressions = opts.mediaExpressions || defaultMediaExpressions;
     const unitIntervals = opts.unitIntervals || defaultUnitIntervals;
@@ -26,10 +29,10 @@ const includeMediaPlugin = (opts = {}) => {
     return {
         postcssPlugin: 'postcss-include-media',
 
-        Root(root, { result }) {
-            root.walkAtRules(function (atRule) {
+        Root(root: Root, { result }: Record<any, Result>): void {
+            root.walkAtRules(function (atRule: AtRule) {
                 if (atRule.name === AT_RULE_NAME) {
-                    const newParams = atRule.params.split(',').map((params) => {
+                    const newParams = `${atRule.params}`.split(',').map((params) => {
                         const matchedMediaExpression = captureMediaExpression(params, mediaExpressions);
                         if (matchedMediaExpression) {
                             return `${matchedMediaExpression}`;
