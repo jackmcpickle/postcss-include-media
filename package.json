@@ -1,6 +1,6 @@
 {
   "name": "postcss-include-media",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "PostCSS plugin to output @media definitions from include-media format.",
   "main": "index.cjs.js",
   "module": "index.es.mjs",
