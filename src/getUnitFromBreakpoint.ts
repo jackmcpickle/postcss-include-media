@@ -5,7 +5,7 @@ import { UNITS } from './constants';
  *
  * @returns {string}
  */
-export const getUnitFromBreakpoint = (breakpoint) => {
+export const getUnitFromBreakpoint = (breakpoint: string) => {
     const reg = new RegExp('([A-z%]+)');
     const match = breakpoint.match(reg)[0];
     return UNITS.includes(match) ? match : '';
