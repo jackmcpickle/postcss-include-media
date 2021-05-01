@@ -1,5 +1,10 @@
 # Change Log
 
+# 1.0.0
+
+- Initial full release
+- Change src to typescript
+
 ## 0.3.2
 - Fixed types for plugin options again
 
