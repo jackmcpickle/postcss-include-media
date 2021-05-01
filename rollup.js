@@ -1,4 +1,5 @@
 import babel from '@rollup/plugin-babel';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
     input: 'index.js',
@@ -7,6 +8,7 @@ export default {
         { file: 'index.es.mjs', format: 'es', sourcemap: true, exports: 'default' },
     ],
     plugins: [
+        typescript(),
         babel({
             babelHelpers: 'bundled',
             plugins: ['@babel/plugin-syntax-dynamic-import'],
