@@ -41,7 +41,7 @@
     "@rollup/plugin-typescript": "8.3.0",
     "@typescript-eslint/eslint-plugin": "5.5.0",
     "@typescript-eslint/parser": "5.5.0",
-    "clean-publish": "3.4.3",
+    "clean-publish": "3.4.4",
     "eslint": "8.4.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-jest": "25.3.0",
