@@ -10,6 +10,7 @@
 - Smart support for media types
 - On-the-fly breakpoints
 - Supports most postcss plugins
+- [Postcss nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting) plugin is a dependency to allow nesting of rules
 
 #### Contents
 - [Install](#Install)
@@ -19,10 +20,10 @@
 
 ## Install
 
-**Step 1:** Install plugin:
+**Step 1:** Install plugins:
 
 ```sh
-npm install --save-dev postcss postcss-include-media
+npm install --save-dev postcss postcss-nesting postcss-include-media
 ```
 
 **Step 2:** Check you project for existed PostCSS config: `postcss.config.js`
@@ -39,6 +40,7 @@ and set this plugin in settings.
 
 module.exports = {
   plugins: [
++   require('postcss-nesting'),
 +   postcssIncludeMedia(),
     require('autoprefixer')
   ]
