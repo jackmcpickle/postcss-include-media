@@ -36,3 +36,13 @@
         background: url(../images/emailx2.png) left center no-repeat;
     }
 }
+
+#sidebar ul li {
+    padding: 10px;
+    display: inline-block;
+
+    @include-media ('>=md') {
+        padding: 20px;
+        display: block;
+    }
+}

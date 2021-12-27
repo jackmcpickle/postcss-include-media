@@ -96,5 +96,8 @@
         "statements": 90
       }
     }
+  },
+  "dependencies": {
+    "postcss-nesting": "^10.1.0"
   }
 }

@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+const postcssNesting = require('postcss-nesting');
 const fs = require('fs');
 const plugin = require('..');
 
@@ -6,7 +7,7 @@ const input = fs.readFileSync('./test/input.css', 'utf8');
 const output = fs.readFileSync('./test/output.css', 'utf8');
 
 async function run(input, opts = {}) {
-    return await postcss([plugin(opts)]).process(input, { from: undefined });
+    return await postcss([postcssNesting, plugin(opts)]).process(input, { from: undefined });
 }
 
 const breakpoints = {
