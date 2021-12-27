@@ -29,7 +29,7 @@ const includeMediaPlugin = (opts: IncludeMediaOptions = {}) => {
     return {
         postcssPlugin: 'postcss-include-media',
 
-        Root(root: Root, { result }: Record<any, Result>): void {
+        Root(root: Root, { result }: Record<string, Result>): void {
             root.walkAtRules(function (atRule: AtRule) {
                 if (atRule.name === AT_RULE_NAME) {
                     const newParams = `${atRule.params}`.split(',').map((params) => {
