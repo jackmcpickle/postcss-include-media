@@ -61,6 +61,7 @@
     "*.js": "eslint --fix"
   },
   "eslintConfig": {
+    "root": true,
     "parserOptions": {
       "ecmaVersion": 2020,
       "sourceType": "module"
