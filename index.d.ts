@@ -15,6 +15,7 @@ export interface IncludeMediaOptions {
     breakpoints?: BreakpointType;
     mediaExpressions?: MediaExpressionType;
     unitIntervals?: UnitIntervalType;
+    ruleName?: string;
 }
 
 import { PluginCreator } from 'postcss';

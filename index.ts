@@ -1,5 +1,5 @@
 import { IncludeMediaOptions } from './';
-import { validBreakpoints, validMediaExpressions, validUnitIntervals } from './src/validators';
+import { validBreakpoints, validMediaExpressions, validRuleName, validUnitIntervals } from './src/validators';
 import { getRuleDimension } from './src/getRuleDimension';
 import { getUnitFromBreakpoint } from './src/getUnitFromBreakpoint';
 import { captureBreakpoint } from './src/captureBreakpoint';
@@ -15,7 +15,11 @@ const includeMediaPlugin = (opts: IncludeMediaOptions = {}) => {
     const breakpoints = opts.breakpoints || defaultBreakpoints;
     const mediaExpressions = opts.mediaExpressions || defaultMediaExpressions;
     const unitIntervals = opts.unitIntervals || defaultUnitIntervals;
+    const ruleName = opts.ruleName || AT_RULE_NAME;
 
+    if (!validRuleName(ruleName)) {
+        throw new Error('Rule name must be a string.');
+    }
     if (!validBreakpoints(breakpoints)) {
         throw new Error('Breakpoints are not the valid structure, must be { key: String }');
     }
@@ -31,7 +35,12 @@ const includeMediaPlugin = (opts: IncludeMediaOptions = {}) => {
 
         Root(root: Root, { result }: Record<string, Result>): void {
             root.walkAtRules(function (atRule: AtRule) {
-                if (atRule.name === AT_RULE_NAME) {
+                const hasSpaceInName = ruleName.includes(' ');
+                const realName = hasSpaceInName ? ruleName.split(' ')[0] : ruleName;
+                const stripPreParams = new RegExp('^[^()]+', 'gm');
+                if (atRule.name === realName) {
+                    // trim part of params in case of spaces between atRule and params (e.g. @include media (...) )
+                    atRule.params = hasSpaceInName ? atRule.params.replace(stripPreParams, '') : atRule.params;
                     const newParams = `${atRule.params}`.split(',').map((params) => {
                         const matchedMediaExpression = captureMediaExpression(params, mediaExpressions);
                         if (matchedMediaExpression) {
