@@ -51,4 +51,20 @@ describe('@include-media', () => {
         expect(result.css).toEqual(negativeOutput);
         expect(result.warnings()).toHaveLength(1);
     });
+
+    it('Should handle rule name change', async () => {
+        const inputBananas = `@banana ('>=phone') { .test { content: '' } }`;
+        const output = `@media (min-width: 320px) { .test { content: '' } }`;
+        const result = await run(inputBananas, { ruleName: 'banana' });
+        expect(result.css).toEqual(output);
+        expect(result.warnings()).toHaveLength(0);
+    });
+
+    it('Should handle rule name change with spaces', async () => {
+        const inputWithSpace = `@include media ('>=phone') { .test { content: '' } }`;
+        const output = `@media (min-width: 320px) { .test { content: '' } }`;
+        const result = await run(inputWithSpace, { ruleName: 'include media' });
+        expect(result.css).toEqual(output);
+        expect(result.warnings()).toHaveLength(0);
+    });
 });
