@@ -1,5 +1,17 @@
 # Change Log
 
+# 1.1.0
+
+- Support new config option `ruleName`
+- Add test to cover new config option `ruleName`
+- Add test to cover nesting
+
+# 1.0.1
+
+- Updated docs to show how to nest rules with postcss-nesting
+
+# Change Log
+
 # 1.0.0
 
 - Initial full release
