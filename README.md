@@ -130,6 +130,28 @@ postcssIncludeMedia({
 
 ```
 
+### `ruleName`
+Defines a the rule name you wish to use for the detection of breakpoints. EG for `@include media('>phone')` set `ruleName: 'include media'`. While this is supported by the plugin, its not recommended, as could cause issues with other plugins.
+
+*type* `string`
+
+*optional*: `true`
+
+*defaults:*
+```js
+'include-media'
+```
+*usage:*
+```js
+
+// allows rules to be used
+// @banana ('>=md') { .test { content: '' } }
+postcssIncludeMedia({
+    ruleName: 'banana'
+}),
+
+```
+
 
 ## Examples
 
