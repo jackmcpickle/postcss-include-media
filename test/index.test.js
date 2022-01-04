@@ -67,4 +67,14 @@ describe('@include-media', () => {
         expect(result.css).toEqual(output);
         expect(result.warnings()).toHaveLength(0);
     });
+
+    it('Should handle nesting with @postcss-nesting', async () => {
+        const inputWithNesting = `.test { content: 'a'; @include-media ('>=phone') { content: 'b' } }`;
+        const output = `.test { content: 'a' }@media (min-width: 320px) { .test { content: 'b' } }`;
+        const result = await run(inputWithNesting, {});
+        // Postcss-nesting does strange things with the linebreaks, so we need to remove the linebreaks
+        const resultRemovedLineBreaks = result.css.replace(/(\r\n|\n|\r)/gm, '');
+        expect(resultRemovedLineBreaks).toEqual(output);
+        expect(result.warnings()).toHaveLength(0);
+    });
 });
