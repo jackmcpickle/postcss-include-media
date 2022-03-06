@@ -50,7 +50,7 @@
     "lint-staged": "12.3.5",
     "postcss": "8.4.7",
     "prettier": "2.5.1",
-    "rollup": "2.69.1",
+    "rollup": "2.69.2",
     "simple-git-hooks": "2.7.0",
     "typescript": "4.6.2"
   },
