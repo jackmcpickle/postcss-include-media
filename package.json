@@ -51,7 +51,7 @@
     "postcss": "8.4.14",
     "prettier": "2.6.2",
     "rollup": "2.75.1",
-    "simple-git-hooks": "2.7.0",
+    "simple-git-hooks": "2.8.0",
     "typescript": "4.7.2"
   },
   "simple-git-hooks": {
