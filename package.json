@@ -52,7 +52,7 @@
     "prettier": "2.7.1",
     "rollup": "2.75.6",
     "simple-git-hooks": "2.8.0",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
