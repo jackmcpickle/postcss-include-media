@@ -34,9 +34,9 @@
     "postcss": "^8.2.8"
   },
   "devDependencies": {
-    "@babel/core": "7.18.9",
+    "@babel/core": "7.18.10",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/preset-env": "7.18.9",
+    "@babel/preset-env": "7.18.10",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-typescript": "8.3.4",
     "@typescript-eslint/eslint-plugin": "5.31.0",
