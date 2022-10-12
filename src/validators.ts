@@ -33,9 +33,9 @@ export const validUnitIntervals = (unitIntervals: UnitIntervalType): boolean => 
 /**
  * Function to validate include-media rule name
  *
- * @param {UnitIntervalType} unitIntervals - object of unitIntervals definitions
+ * @param {string} name - name of rule
  * @example 'includeMedia';
  *
  * @returns {boolean}
  */
-export const validRuleName = (name: string): boolean => typeof name === 'string';
+export const validRuleName = (name: unknown): name is string => typeof name === 'string';

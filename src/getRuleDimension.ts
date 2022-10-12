@@ -6,9 +6,9 @@
  *
  *  @return {string} - `width` or `height` (or potentially anything else)
  */
-export const getRuleDimension = (params: string, operator: string): string => {
-    const operatorIndex = params.indexOf(operator);
-    const parsedDimension = params.slice(1, operatorIndex - 1);
+export const getRuleDimension = (atRuleParams: string, operator: string): string => {
+    const operatorIndex = atRuleParams.indexOf(operator);
+    const parsedDimension = atRuleParams.slice(1, operatorIndex - 1);
     const dimension = 'width';
 
     if (parsedDimension.length > 0) {

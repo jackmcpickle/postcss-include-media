@@ -39,13 +39,13 @@
 
 #sidebar ul li {
     padding: 10px;
-    display: inline-block
+    display: inline-block;
 }
 
 @media (min-width: 700px) {
 
 #sidebar ul li {
         padding: 20px;
-        display: block
+        display: block;
 }
     }
