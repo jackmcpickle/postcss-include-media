@@ -99,6 +99,6 @@
     }
   },
   "dependencies": {
-    "postcss-nesting": "^10.1.0"
+    "postcss-nesting": "^10.1.10"
   }
 }
