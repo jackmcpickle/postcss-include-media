@@ -40,22 +40,22 @@
         "@babel/preset-env": "7.19.4",
         "@rollup/plugin-babel": "6.0.0",
         "@rollup/plugin-typescript": "9.0.1",
-        "@types/node": "^18.8.4",
+        "@types/node": "18.8.4",
         "@typescript-eslint/eslint-plugin": "5.40.0",
         "@typescript-eslint/parser": "5.40.0",
-        "@vitest/coverage-c8": "^0.24.1",
+        "@vitest/coverage-c8": "0.24.1",
         "clean-publish": "4.0.1",
         "eslint": "8.25.0",
         "eslint-config-prettier": "8.5.0",
         "eslint-plugin-prettier": "4.2.1",
         "lint-staged": "13.0.3",
         "postcss": "8.4.17",
-        "postcss-nesting": "^10.2.0",
+        "postcss-nesting": "10.2.0",
         "prettier": "2.7.1",
         "rollup": "2.79.1",
         "simple-git-hooks": "2.8.0",
         "typescript": "4.8.4",
-        "vitest": "^0.24.1"
+        "vitest": "0.24.1"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged"
