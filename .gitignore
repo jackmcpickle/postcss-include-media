@@ -4,3 +4,4 @@ yarn-error.log
 index.*.*
 !index.d.ts
 coverage/
+.dccache
