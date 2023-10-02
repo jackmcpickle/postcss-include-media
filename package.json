@@ -40,7 +40,7 @@
         "@babel/preset-env": "7.22.20",
         "@rollup/plugin-babel": "6.0.3",
         "@rollup/plugin-typescript": "11.1.4",
-        "@types/node": "18.18.1",
+        "@types/node": "18.18.3",
         "@typescript-eslint/eslint-plugin": "6.7.4",
         "@typescript-eslint/parser": "6.7.4",
         "@vitest/coverage-c8": "0.33.0",
