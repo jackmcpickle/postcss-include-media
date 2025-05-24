@@ -52,7 +52,7 @@
         "postcss": "8.5.3",
         "postcss-nesting": "12.1.5",
         "prettier": "2.8.8",
-        "rollup": "2.79.2",
+        "rollup": "4.41.1",
         "simple-git-hooks": "2.13.0",
         "typescript": "5.8.3",
         "vitest": "0.34.6"
