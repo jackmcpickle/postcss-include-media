@@ -54,7 +54,7 @@
         "prettier": "2.8.8",
         "rollup": "2.79.2",
         "simple-git-hooks": "2.13.1",
-        "typescript": "5.8.3",
+        "typescript": "5.9.2",
         "vitest": "0.34.6"
     },
     "simple-git-hooks": {
